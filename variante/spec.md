@@ -6,7 +6,7 @@ Implemente somente o que está nesta spec. Os nomes dos campos e das rotas devem
 - RN1: 
 
 # Entidades
-- bilhete: placa (string, maiusculo, ex: "ABC1D23"), status (string, assume somente os vlaores "aberto" ou "fechado"), TARIFA_HORA _CENTAVOS (int, valor da hora cheia em centavos), FRACAO_MINUTOS (int, valor fixo para a cobrança de taxas), 
+- bilhete: placa (string, maiusculo, ex: "ABC1D23"), status (string, assume somente os vlaores "aberto" ou "fechado"), entrada (dateTime, formato <ISO-8601 com fuso -03:00>), saida (dateTime, formato <ISO-8601 com fuso -03:00>), valor_centavos(int, valor numérico com o calculo do valor dos centavos)
 
 # Casos de Uso:
  
@@ -25,22 +25,20 @@ Implemente somente o que está nesta spec. Os nomes dos campos e das rotas devem
 - UC2 (Encerar Bilhete):
     - Rota: POST /bilhetes/{id}/encerramento
     - Entrada: Sem corpo, informar somente o id fo bilhete no corpo da url
-    - Resposta de Sucesso: informado o id na url retorna status 200 com array de .
+    - Resposta de Sucesso: informado o id na url retorna status 200.
     - Erros: id informado de maneira indevida retorna erro 400.
     - Criterios de Aceite:
         - Ao informar o id do bilhete no corpo da url retorna status 200.
         - Ao Não informar o id do bilhete no corpo da url retorna erro status 400.
         - Ao informar um id já encerrado no corpo da url retorna erro status 409.
 
-- UC2 (Encerar Bilhete):
-    - Rota: POST /bilhetes/{id}/encerramento
-    - Entrada: Sem corpo, informar somente o id fo bilhete no corpo da url
-    - Resposta de Sucesso: informado o id na url retorna status 200 com array de .
-    - Erros: id informado de maneira indevida retorna erro 400.
+- UC3 (Listar Ativos):
+    - Rota: GET /bilhetes/ativos
+    - Entrada: Sem corpo, informar somente url
+    - Resposta de Sucesso: status 200 com array de bilhetes com status aberto.
+    - Erros: retorna erro status 404.
     - Criterios de Aceite:
-        - Ao informar o id do bilhete no corpo da url retorna status 200.
-        - Ao Não informar o id do bilhete no corpo da url retorna erro status 400.
-        - Ao informar um id já encerrado no corpo da url retorna erro status 409.
+        - Ao informar a Url corretamente retorna status 200 com array de bilhetes 
 
 # Fora de escopo
 
