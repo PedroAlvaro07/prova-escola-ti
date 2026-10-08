@@ -2,9 +2,9 @@
 
 # ALUNO
 
-Nome: PedroAlvaro07
+Nome: Pedro Alvaro Mantuani Silva
 
-RA: >>> PREENCHER <<<
+RA: 23079477-2
 
 Conta GitHub: @PedroAlvaro07
 
