@@ -1,0 +1,2 @@
+| id | cenário | esperado | tipo |
+|---|---|---|---|
